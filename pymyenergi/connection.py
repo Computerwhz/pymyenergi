@@ -168,3 +168,4 @@ class Connection:
 
     async def delete(self, url, data=None, oauth=False):
         return await self.send("DELETE", url, data, oauth)
+

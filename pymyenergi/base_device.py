@@ -5,7 +5,7 @@ from datetime import datetime
 from datetime import timedelta
 from datetime import timezone
 
-from pymyenergi.connection import Connection
+from .connection import Connection
 
 from . import HOUR
 from . import MINUTE
@@ -264,3 +264,4 @@ class BaseDevice(ABC):
 
     def __repr__(self):
         return f"{self.kind}-{self._serialno}"
+

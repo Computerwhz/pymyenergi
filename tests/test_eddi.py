@@ -26,3 +26,4 @@ async def test_boost(eddi_fetch_data_fixture):
     mock_get.assert_awaited_with("/cgi-eddi-boost-E16042300-10-1-300")
     await eddi.manual_boost("heater1", 300)
     mock_get.assert_awaited_with("/cgi-eddi-boost-E16042300-10-1-300")
+

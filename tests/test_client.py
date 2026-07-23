@@ -104,3 +104,4 @@ async def test_get_libbi_devices(client_fetch_data_fixture):
     devices = await client.get_devices("libbi")
     assert len(devices) == 1
     assert isinstance(devices[0], Libbi)
+

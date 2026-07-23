@@ -1,6 +1,6 @@
 import logging
 
-from pymyenergi.connection import Connection
+from .connection import Connection
 
 from . import EDDI
 from .base_device import BaseDevice
@@ -240,3 +240,4 @@ class Eddi(BaseDevice):
         for key in self.ct_keys:
             ret = ret + f"Energy {key} {self.history_data.get(key, 0)}Wh\n"
         return ret
+

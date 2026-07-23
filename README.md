@@ -85,8 +85,8 @@ Install pymyenergi using pip (requires Python > 3.6)
 
 ```python
 import asyncio
-from pymyenergi.connection import Connection
-from pymyenergi.client import MyenergiClient
+from .pymyenergi.connection import Connection
+from .pymyenergi.client import MyenergiClient
 from sys import argv
 import logging
 
@@ -111,8 +111,8 @@ loop.run_until_complete(zappis())
 
 ```python
 import asyncio
-from pymyenergi.connection import Connection
-from pymyenergi.zappi import Zappi
+from .pymyenergi.connection import Connection
+from .pymyenergi.zappi import Zappi
 from sys import argv
 import logging
 

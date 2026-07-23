@@ -1,4 +1,4 @@
-from pymyenergi.connection import Connection
+from .connection import Connection
 
 from . import ZAPPI
 from .base_device import BaseDevice
@@ -18,6 +18,11 @@ PHASES_STATES = {
     "SINGLE_PHASE": "1",
     "THREE_PHASE": "3",
     "AUTO": "auto",
+}
+SMARTREGS_CHARGE_DELAY_STATES = {
+    54: "CHARGE_START_DELAY",
+    55: "CHARGE_END_DELAY",
+    56: "SMART_CHARGE_DELAY",
 }
 PHASES_STRINGS = {
     "1": "SINGLE_PHASE",
@@ -260,6 +265,11 @@ class Zappi(BaseDevice):
         return self._data.get("zsh")
 
     @property
+    def smartregs_charge_delay(self):
+        """Smart regs charge delay"""
+        return SMARTREGS_CHARGE_DELAY_STATES.get(self._data.get("zsh"), "NO_DELAY")
+
+    @property
     def zsl(self):
         return self._data.get("zsl")
 
@@ -326,6 +336,7 @@ class Zappi(BaseDevice):
         ret = ret + f" {self.smart_boost_start_hour}:{self.smart_boost_start_minute}"
         ret = ret + f" add {self.smart_boost_amount}kWh\n"
         ret = ret + f"Minimum green level: {self.minimum_green_level}%"
+        ret = ret + f"Smartregs Charge Delay: {self.smart_regs_charge_delay}"
         return ret
 
     async def stop_charge(self):
@@ -394,3 +405,9 @@ class Zappi(BaseDevice):
         """Unlock"""
         await self._connection.get(f"/cgi-jlock-{self._serialno}-00000010")
         return True
+
+    async def cancel_smartregs_charge_delay(self):
+        """Cancel smart regs charge delay"""
+        await self._connection.get(f"/cgi-cancel-smartregs-charge-delay-{self._serialno}")
+        return True
+

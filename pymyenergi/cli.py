@@ -7,14 +7,14 @@ import os
 import sys
 from getpass import getpass
 
-from pymyenergi.client import MyenergiClient
-from pymyenergi.client import device_factory
-from pymyenergi.connection import Connection
-from pymyenergi.eddi import BOOST_TARGETS
-from pymyenergi.eddi import EDDI_MODES
-from pymyenergi.exceptions import WrongCredentials
-from pymyenergi.libbi import LIBBI_MODES
-from pymyenergi.zappi import CHARGE_MODES
+from .client import MyenergiClient
+from .client import device_factory
+from .connection import Connection
+from .eddi import BOOST_TARGETS
+from .eddi import EDDI_MODES
+from .exceptions import WrongCredentials
+from .libbi import LIBBI_MODES
+from .zappi import CHARGE_MODES
 
 from . import EDDI
 from . import HARVI
@@ -269,3 +269,4 @@ def cli():
 
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main(args))
+

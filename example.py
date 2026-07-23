@@ -2,8 +2,8 @@ import asyncio
 import logging
 from sys import argv
 
-from pymyenergi.client import MyenergiClient
-from pymyenergi.connection import Connection
+from .pymyenergi.client import MyenergiClient
+from .pymyenergi.connection import Connection
 
 logging.basicConfig()
 logging.root.setLevel(logging.INFO)

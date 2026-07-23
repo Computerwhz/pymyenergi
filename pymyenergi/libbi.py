@@ -1,4 +1,4 @@
-from pymyenergi.connection import Connection
+from .connection import Connection
 
 from . import LIBBI
 from .base_device import BaseDevice
@@ -353,3 +353,4 @@ class Libbi(BaseDevice):
         if not self._connection.app_email or not self._connection.app_password:
             ret += "No app credentials provided - the above information might not be totally accurate\n"
         return ret
+

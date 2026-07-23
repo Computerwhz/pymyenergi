@@ -2,8 +2,8 @@ import asyncio
 import logging
 from sys import argv
 
-from pymyenergi.connection import Connection
-from pymyenergi.zappi import Zappi
+from .pymyenergi.connection import Connection
+from .pymyenergi.zappi import Zappi
 
 logging.basicConfig()
 logging.root.setLevel(logging.INFO)

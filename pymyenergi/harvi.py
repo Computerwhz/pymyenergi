@@ -1,4 +1,4 @@
-from pymyenergi.connection import Connection
+from .connection import Connection
 
 from . import HARVI
 from .base_device import BaseDevice
@@ -49,3 +49,4 @@ class Harvi(BaseDevice):
         ret = ret + f"CT 2 {self.ct2.name} {self.ct2.power}W phase {self.ct2.phase}\n"
         ret = ret + f"CT 3 {self.ct3.name} {self.ct3.power}W phase {self.ct3.phase}\n"
         return ret
+
