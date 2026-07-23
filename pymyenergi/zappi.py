@@ -265,11 +265,6 @@ class Zappi(BaseDevice):
         return self._data.get("zsh")
 
     @property
-    def smartregs_charge_delay(self):
-        """Smart regs charge delay"""
-        return SMARTREGS_CHARGE_DELAY_STATES.get(self._data.get("zsh"), "No Delay")
-
-    @property
     def zsl(self):
         return self._data.get("zsl")
 
@@ -284,6 +279,16 @@ class Zappi(BaseDevice):
     @property
     def rdc(self):
         return self._data.get("rdc")
+
+    @property
+    def smartregs_charge_delay(self):
+        """Smart regs charge delay"""
+        return SMARTREGS_CHARGE_DELAY_STATES.get(self.zsh, "No Delay")
+
+    @property
+    def being_tampered_with(self):
+        """Being tampered with (Is front cover removed)"""
+        return self._data.get("beingTamperedWith", False)
 
     def show(self, short_format=False):
         """Returns a string with all data in human readable format"""
@@ -336,7 +341,8 @@ class Zappi(BaseDevice):
         ret = ret + f" {self.smart_boost_start_hour}:{self.smart_boost_start_minute}"
         ret = ret + f" add {self.smart_boost_amount}kWh\n"
         ret = ret + f"Minimum green level: {self.minimum_green_level}%"
-        ret = ret + f"Smartregs Charge Delay: {self.smart_regs_charge_delay}"
+        ret = ret + f"Smartregs charge delay: {self.smart_regs_charge_delay}"
+        ret = ret + f"Being tampered with: {self.being_tampered_with}"
         return ret
 
     async def stop_charge(self):

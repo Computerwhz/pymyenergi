@@ -354,3 +354,4 @@ class Libbi(BaseDevice):
             ret += "No app credentials provided - the above information might not be totally accurate\n"
         return ret
 
+
