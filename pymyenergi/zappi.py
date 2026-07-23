@@ -1,4 +1,4 @@
-from .connection import Connection
+from pymyenergi.connection import Connection
 
 from . import ZAPPI
 from .base_device import BaseDevice
@@ -416,4 +416,3 @@ class Zappi(BaseDevice):
         """Cancel smart regs charge delay"""
         await self._connection.get(f"/cgi-cancel-smartregs-charge-delay-{self._serialno}")
         return True
-

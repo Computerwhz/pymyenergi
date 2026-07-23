@@ -12,4 +12,3 @@ class CT:
     def power(self):
         """Power reading of CT clamp in W"""
         return self._value
-

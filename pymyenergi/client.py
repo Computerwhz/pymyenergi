@@ -2,7 +2,7 @@ import logging
 from datetime import datetime
 from datetime import timezone
 
-from .connection import Connection
+from pymyenergi.connection import Connection
 
 from . import CT_BATTERY
 from . import CT_GENERATION
@@ -346,4 +346,3 @@ class MyenergiClient:
             else:
                 out = out + "\n\n"
         return out
-

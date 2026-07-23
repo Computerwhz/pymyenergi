@@ -10,4 +10,3 @@ async def test_refresh(libbi_fetch_data_fixture):
     libbi = Libbi({}, 24047164)
     await libbi.refresh()
     assert libbi.serial_number == 24047164
-

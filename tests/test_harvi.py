@@ -10,4 +10,3 @@ async def test_refresh(harvi_fetch_data_fixture):
     harvi = Harvi({}, 10645200)
     await harvi.refresh()
     assert harvi.serial_number == 10645200
-

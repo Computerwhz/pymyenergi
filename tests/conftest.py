@@ -99,4 +99,3 @@ def libbi_fetch_data_fixture():
 # def eddi_connection_mock():
 #    with patch("pymyenergi.eddi.Eddi._connection"):
 #        yield AsyncMock
-

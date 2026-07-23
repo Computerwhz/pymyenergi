@@ -52,4 +52,3 @@ class TimeoutException(MyenergiException):
     """Class of exceptions for incomplete credentials."""
 
     pass
-
