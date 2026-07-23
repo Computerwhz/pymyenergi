@@ -20,9 +20,9 @@ PHASES_STATES = {
     "AUTO": "auto",
 }
 SMARTREGS_CHARGE_DELAY_STATES = {
-    54: "CHARGE_START_DELAY",
-    55: "CHARGE_END_DELAY",
-    56: "SMART_CHARGE_DELAY",
+    54: "Charge Start Delay",
+    55: "Charge Finish Delay",
+    56: "Smart Charge Delay",
 }
 PHASES_STRINGS = {
     "1": "SINGLE_PHASE",
@@ -267,7 +267,7 @@ class Zappi(BaseDevice):
     @property
     def smartregs_charge_delay(self):
         """Smart regs charge delay"""
-        return SMARTREGS_CHARGE_DELAY_STATES.get(self._data.get("zsh"), "NO_DELAY")
+        return SMARTREGS_CHARGE_DELAY_STATES.get(self._data.get("zsh"), "No Delay")
 
     @property
     def zsl(self):
