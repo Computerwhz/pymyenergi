@@ -414,5 +414,5 @@ class Zappi(BaseDevice):
 
     async def cancel_smartregs_charge_delay(self):
         """Cancel smart regs charge delay"""
-        await self._connection.get(f"/cgi-cancel-smartregs-charge-delay-{self._serialno}")
+        await self._connection.get(f"/cgi-cancel-smartregs-charge-delay-Z{self._serialno}")
         return True
