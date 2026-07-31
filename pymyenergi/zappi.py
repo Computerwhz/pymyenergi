@@ -340,8 +340,8 @@ class Zappi(BaseDevice):
         ret = ret + "Smart Boost start at"
         ret = ret + f" {self.smart_boost_start_hour}:{self.smart_boost_start_minute}"
         ret = ret + f" add {self.smart_boost_amount}kWh\n"
-        ret = ret + f"Minimum green level: {self.minimum_green_level}%"
-        ret = ret + f"Smartregs charge delay: {self.smart_regs_charge_delay}"
+        ret = ret + f"Minimum green level: {self.minimum_green_level}%\n"
+        ret = ret + f"Smartregs charge delay: {self.smartregs_charge_delay}\n"
         ret = ret + f"Being tampered with: {self.being_tampered_with}"
         return ret
 
