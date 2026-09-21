@@ -226,6 +226,11 @@ class Zappi(BaseDevice):
         """Boost amount of energy to add"""
         return self._data.get("tbk", -1)
 
+    @property
+    def boost_remaining(self):
+        """Amount of boost energy remaining"""
+        return self.boost_amount - self.charge_added
+
     # The following properties are have unknown purpose, names will change once known
     @property
     def bst(self):
